@@ -8,8 +8,7 @@ This is a test project to build a jenkins pipeline, which compiles and tests the
 
 - Do version checks, install Jenkins on Windows 
 - Update Docker version and install Java SDK 17
-    - Why not latest java version 19? Because Jenkins requires 11 or 17:
-      https://www.jenkins.io/doc/administration/requirements/java/
+- Why not latest java version 19? Because Jenkins requires 11 or 17: https://www.jenkins.io/doc/administration/requirements/java/
 - Clone the sample code (https://github.com/spring-projects/spring-petclinic) into a my github repository.
 - Added the Pipline Plugin and Github to Jenkins
 - Define initial pipeline through the classic UI for testing
@@ -24,7 +23,7 @@ Please be informed, this documentation and the work was done a Windows PC, not o
 - make sure you have Jenkins running on a machine or in a Docker container
 - if not already done, please add the the Pipline Plugin and Github to Jenkins
 - install Java SDK 17 (not a JRE!)
-    - furthermore make sure you set JAVA_HOME environment variable to point to you java installation (e.g. "set JAVA_HOME=C:\Program Files\Java\jdk-17.0.5")
+- furthermore make sure you set JAVA_HOME environment variable to point to you java installation (e.g. "set JAVA_HOME=C:\Program Files\Java\jdk-17.0.5")
 - get git command line tool ([https://help.github.com/articles/set-up-git](https://help.github.com/articles/set-up-git))
 - have Docker installed and ensure the Docker daemon is running and is accessible (https://docs.docker.com/get-docker/)
 
@@ -58,7 +57,7 @@ docker run --name testPetclinic spring-petclinic:3.0.0-SNAPSHOT
 ```
 The `run` command basically is `docker create` and `docker start`, which creates a container and then starts the image. You can then access petclinic here: [http://localhost:8080/](http://localhost:8080/)
 
-If already created a container and stopped, you may restart it with 
+If there is an already created container but stopped, you may restart it with 
 ```
 docker start testPetclinic
 ```
