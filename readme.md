@@ -14,7 +14,7 @@ Please be informed, this documentation and the work was done a Windows PC, not o
 - make sure you have Jenkins running on a machine or you may use (Jenkins in Docker container)[https://www.jenkins.io/doc/book/installing/docker/]
 - if not already done, please add the the Pipline Plugin and Github to Jenkins
 - install Java SDK 17 (not a JRE!)
-- furthermore make sure you set JAVA_HOME environment variable to point to you java installation (e.g. "set JAVA_HOME=C:\Program Files\Java\jdk-17.0.5")
+- furthermore make sure you set JAVA_HOME environment variable to point to you java installation (e.g. `set JAVA_HOME=C:\Program Files\Java\jdk-17.0.5`)
 - get git command line tool ([https://help.github.com/articles/set-up-git](https://help.github.com/articles/set-up-git))
 - have Docker installed and ensure the Docker daemon is running and is accessible (https://docs.docker.com/get-docker/)
 - Optional: Make sure you have a JFrog Artifactory Server running
@@ -37,10 +37,9 @@ You should now have a pipeline configured. When executing the pipeline, Jenkins 
 
 ##### The three stages are:
 
-    a) Compile
-    b) Test
-    c) Build Docker Image
-
+  a) Compile
+  b) Test
+  c) Build Docker Image
   
 # Docker container and how to run it
 
@@ -79,16 +78,21 @@ Please login to your Jenkins Server to integrate Artifactory with Jenkins.
 ## Steps
 
 1. Install the [Jenkins Artifactory plug-in](https://plugins.jenkins.io/artifactory/). In the left menu, choose:
-   `Manage Jenkins` -> `Jenkins Plugins` -> `available` -> `artifactory`
+
+`Manage Jenkins` -> `Jenkins Plugins` -> `available` -> `artifactory`
+
 2. Configure Artifactory server credentials in the Jenkis UI (alternativly, you can create a [pipeline script](https://www.jfrog.com/confluence/display/JFROG/Declarative+Pipeline+Syntax))
-   Please got to `Manage Jenkins` -> `Configure System` -> `Artifactory`
+   Please go to
+   
+   `Manage Jenkins` -> `Configure System` -> `Artifactory`
+   
    - Artifactory Servers
       - Server ID : `Your-Artifactory-Server-ID`
       - URL : `Your-Artifactory-Server-URL`
       - Username : `jenkins`
       - Password : *`my-jenkins-password`*
     
-  - **Important hint**: We have a default user called `admin` but its not best practice to use `admin` user. Please create a new user in your Artifactory server, e.g. `jenkins`. Please be aware that this user needs to have Admin Privileges, because otherwise the user is not able to store artifacts in the Artifactory.
+**Important hint**: We have a default user called `admin` but its not best practice to use `admin` user. Please create a new user in your Artifactory server, e.g. `jenkins`. Please be aware that this user needs to have Admin Privileges, because otherwise the user is not able to store artifacts in the Artifactory.
 
 Now we are done with integrating JFrog Artifactory to our Jenkins server. Next step is to send the result of our pipeline to the Artifactory server. This project used the declarative pipline syntax, so please refer to: https://www.jfrog.com/confluence/display/JFROG/Declarative+Pipeline+Syntax
 
