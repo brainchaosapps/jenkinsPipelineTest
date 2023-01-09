@@ -11,15 +11,17 @@ Please be informed, this documentation and the work was done a Windows PC, not o
 
 ## Prerequisites
 
-- make sure you have Jenkins running on a machine or you may use (Jenkins in Docker container)[https://www.jenkins.io/doc/book/installing/docker/]
+- make sure you have Jenkins running on a machine or you may use [Jenkins in Docker container](https://www.jenkins.io/doc/book/installing/docker/)
 - if not already done, please add the the Pipline Plugin and Github to Jenkins
-- install Java SDK 17 (not a JRE!)
-- furthermore make sure you set JAVA_HOME environment variable to point to you java installation (e.g. `set JAVA_HOME=C:\Program Files\Java\jdk-17.0.5`)
-- get git command line tool ([https://help.github.com/articles/set-up-git](https://help.github.com/articles/set-up-git))
 - have Docker installed and ensure the Docker daemon is running and is accessible (https://docs.docker.com/get-docker/)
 - Optional: Make sure you have a JFrog Artifactory Server running
   https://jfrog.com/de/artifactory/install/
-  
+
+If you want to test locally
+- please install Java SDK 17 (not a JRE!)
+- furthermore make sure you set JAVA_HOME environment variable to point to you java installation (e.g. `set JAVA_HOME=C:\Program Files\Java\jdk-17.0.5`)
+- get git command line tool ([https://help.github.com/articles/set-up-git](https://help.github.com/articles/set-up-git))
+
 ## Creating the Pipeline
 
 We will now have to create the Jenkins pipeline. Perform the following steps on the Jenkins Classic UI:
@@ -35,11 +37,13 @@ We will now have to create the Jenkins pipeline. Perform the following steps on 
 
 You should now have a pipeline configured. When executing the pipeline, Jenkins will clone the Git repository, look for a file named `Jenkinsfile` at its root and execute the instructions (stages) in it:
 
-##### The three stages are:
+#### The three stages are:
 
-  a) Compile
-  b) Test
-  c) Build Docker Image
+A. Compile
+
+B. Test
+
+C. Build Docker Image
   
 # Docker container and how to run it
 
@@ -79,7 +83,7 @@ Please login to your Jenkins Server to integrate Artifactory with Jenkins.
 
 1. Install the [Jenkins Artifactory plug-in](https://plugins.jenkins.io/artifactory/). In the left menu, choose:
 
-`Manage Jenkins` -> `Jenkins Plugins` -> `available` -> `artifactory`
+	`Manage Jenkins` -> `Jenkins Plugins` -> `available` -> `artifactory`
 
 2. Configure Artifactory server credentials in the Jenkis UI (alternativly, you can create a [pipeline script](https://www.jfrog.com/confluence/display/JFROG/Declarative+Pipeline+Syntax))
    Please go to
