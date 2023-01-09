@@ -78,9 +78,9 @@ Please login to your Jenkins Server to integrate Artifactory with Jenkins.
 
 ## Steps
 
-1. Install "Artifactory" plug-in. In the left menu, choose:
+1. Install the [Jenkins Artifactory plug-in](https://plugins.jenkins.io/artifactory/). In the left menu, choose:
    `Manage Jenkins` -> `Jenkins Plugins` -> `available` -> `artifactory`
-2. Configure Artifactory server credentials in the Jenkis UI (alternativly, you can create [pipeline script](https://www.jfrog.com/confluence/display/JFROG/Declarative+Pipeline+Syntax))
+2. Configure Artifactory server credentials in the Jenkis UI (alternativly, you can create a [pipeline script](https://www.jfrog.com/confluence/display/JFROG/Declarative+Pipeline+Syntax))
    Please got to `Manage Jenkins` -> `Configure System` -> `Artifactory`
    - Artifactory Servers
       - Server ID : `Your-Artifactory-Server-ID`
@@ -90,7 +90,7 @@ Please login to your Jenkins Server to integrate Artifactory with Jenkins.
     
   - **Important hint**: We have a default user called `admin` but its not best practice to use `admin` user. Please create a new user in your Artifactory server, e.g. `jenkins`. Please be aware that this user needs to have Admin Privileges, because otherwise the user is not able to store artifacts in the Artifactory.
 
-Now we are done with integrating JFrog Artifactory to our Jenkis server. Next step is to send the result of our pipeline to the Artifactory server. This project used the declarative pipline syntax, so please refer to: https://www.jfrog.com/confluence/display/JFROG/Declarative+Pipeline+Syntax
+Now we are done with integrating JFrog Artifactory to our Jenkins server. Next step is to send the result of our pipeline to the Artifactory server. This project used the declarative pipline syntax, so please refer to: https://www.jfrog.com/confluence/display/JFROG/Declarative+Pipeline+Syntax
 
 # License
 
