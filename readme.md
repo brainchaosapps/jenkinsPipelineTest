@@ -2,7 +2,7 @@
 
 This is a cloned, testing environment of https://github.com/spring-projects/spring-petclinic.
 
-This is a test project to build a jenkins pipeline, which compiles and tests the code and finally packages the project as a runnable Docker image.
+This is a test project to build a jenkins pipeline, which compiles and tests the code and finally packages the project as a runnable Docker image. Optionally, you can deploy the result artifact to JFrog Artifactory.
 
 # How to run the project?
 
@@ -30,7 +30,9 @@ We will now have to create the Jenkins pipeline. Perform the following steps on 
 2.  **Enter an item name**, feel free to choose whatever you want for testing puposes.
 3.  Choose **Pipeline** as the job type and click **OK**.
 4.  Under **Pipeline -> Definition** choose **Pipeline script from SCM** and then choose **Git**
-6.  Under **Repository URL** enter: https://github.com/brainchaosapps/jenkinsPipelineTest.git
+5.  Under **Repository URL** enter: https://github.com/brainchaosapps/jenkinsPipelineTest.git
+6.  Enter `main` for the Branch Specifier
+6.  Please make sure `Lightweight checkout` is unchecked
 7.  Leave the rest at the default and click **Save**.
 
 ## Executing the Pipeline
@@ -54,7 +56,7 @@ Executing the pipeline delivers a docker image `spring-petclinic:3.0.0-SNAPSHOT`
 docker run --name testPetclinic spring-petclinic:3.0.0-SNAPSHOT
 ```
 
-The `run` command basically is `docker create` and `docker start`, which creates a container and then starts the image. You can then access petclinic here: [http://localhost:8080/](http://localhost:8080/)
+The [run](https://docs.docker.com/engine/reference/commandline/run/) command basically is [docker create](https://docs.docker.com/engine/reference/commandline/create/) and [docker start](https://docs.docker.com/engine/reference/commandline/start/) combined, which creates a container and then starts the image. You can then access petclinic here: [http://localhost:8080/](http://localhost:8080/)
 
 If there is an already created container but stopped, you may restart it with
 
@@ -62,7 +64,7 @@ If there is an already created container but stopped, you may restart it with
 docker start testPetclinic
 ```
 
-#### Got a saved docker image?
+### Got a saved docker image?
 
 If you have a saved Docker image, you can use the following to add it:
 
